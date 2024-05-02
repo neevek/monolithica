@@ -6,8 +6,8 @@ use std::{
     path::Path,
 };
 
-pub struct AssetArhiver {}
-impl AssetArhiver {
+pub struct AssetArchiver {}
+impl AssetArchiver {
     pub fn create_archive(
         src_dir: &str,
         blob_path: &Path,
@@ -152,7 +152,7 @@ mod tests {
     fn it_works() {
         let archive_file = Path::new("target/test.blob");
         let archive_file_index = Path::new("target/test.blob.idx");
-        AssetArhiver::create_archive("target", archive_file, archive_file_index, true).unwrap();
+        AssetArchiver::create_archive("target", archive_file, archive_file_index, true).unwrap();
 
         let mut file = File::open(archive_file_index).unwrap();
         let mut s = String::new();
